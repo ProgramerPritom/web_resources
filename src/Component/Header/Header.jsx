@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const Header = () => {
+const Header = ({resourceData}) => {
     useEffect(() => {
         const handleScroll = () => {
             const card = document.querySelector('.sticky-card');
@@ -20,17 +20,17 @@ const Header = () => {
             <div className='mt-20 grid grid-cols-1 gap-16 px-0 md:px-16 lg:grid-cols-2 lg:gap-24 lg:px-24 xl:px-36'>
                 <div>
                     <div className='w-fit'></div>
-                    <h1 className='text-5xl font-bold leading-[48px] text-white'>7 SaaS Sales Techniques I Used to Help Grow Gong</h1>
-                    <p className='text-lg font-normal text-white mt-4'>from $200k to $200M in ARR</p>
+                    <h1 className='text-5xl font-bold leading-[48px] text-white'>{resourceData[0].title}</h1>
+                    <p className='text-lg font-normal text-white mt-4'>{resourceData[0].sub_title}</p>
                     <div className='mt-12'>
                         <p className='mt-4 text-base font-normal leading-4 text-white'></p>
                     </div>
                     <div className='mt-12 flex flex-col gap-2 text-base font-normal text-white'>
                         <p className='text-xl'>
-                        Created by: <span className='font-medium'>Chris Orlob</span>
+                        Created by: <span className='font-medium'>{resourceData[0].created_by}</span>
                         </p>
                         <p className='text-xl'>
-                        Last updated: <span className='font-medium'>28th Sep, 2023</span>
+                        Last updated: <span className='font-medium'>{resourceData[0].created_date}</span>
                         </p>
                     </div>
                 </div>

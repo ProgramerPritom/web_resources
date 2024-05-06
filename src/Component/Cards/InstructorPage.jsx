@@ -2,8 +2,8 @@ import React from 'react';
 import Image1 from '../../assets/Headshot1.png'
 import Image from '../../assets/Priority.svg'
 
-const InstructorPage = () => {
-    const instructorinfo = {name: "Chris Orlob",title:'CEO of pclub.io',summary: 'Chris is a serial sales tech entrepreneur. He grew Gong from $200k to $200M ARR and a $7.2B valuation in five years. He is an entrepreneur turned SaaS executive turned entrepreneur again. He is currently on a mission to build an ecosystem of companies that collectively make the biggest contribution to global sales success of any company on the planet by changing how sales organizations Hire, Ramp, Develop, and Retain their salespeople.'}
+const InstructorPage = ({resourceData}) => {
+    
     return (
         <div>
             <h2 className='mb-4 mt-14 text-2xl font-bold'>Instructor</h2>
@@ -19,16 +19,16 @@ const InstructorPage = () => {
                             <p className='cursor-pointer text-center flex items-center justify-center appearance-none py-2 px-5 bg-white border border-[#E0E6EF] text-black text-sm leading-6 font-semibold rounded-md h-10 hover:bg-gray-100 ease-linear transition-all duration-150'>Twitter</p>
                         </div>
                     </div>
-                    <p className="mt-6 text-xl font-semibold leading-6">{instructorinfo.name}</p>
+                    <p className="mt-6 text-xl font-semibold leading-6">{resourceData[0].instructor_name}</p>
                     <div className='mt-2.5'>
                         <div className='flex items-center gap-3'>
                             <div className='h-8 w-8'>
                             <img src={Image} className='mr-3'></img>
                             </div>
-                            <span className='text-base font-medium'>{instructorinfo.title}</span>
+                            <span className='text-base font-medium'>{resourceData[0].instructor_position}</span>
                         </div>
                         <p className='mt-3 text-justify'>
-                            <span className='text-base font-normal text-black'>{instructorinfo.summary} </span>
+                            <span className='text-base font-normal text-black'>{resourceData[0].instructor_summary} </span>
                         </p>
                         
                     </div>
