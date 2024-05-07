@@ -3,15 +3,14 @@ import './App.css'
 import CardDesign from './Component/Cards/CardDesign'
 import Header from './Component/Header/Header'
 import axios from 'axios';
+import { BACKEND_BASE_URL } from '../config';
 
 function App() {
   const [resourceData, setResourceData] = useState({});
-  // State to handle loading state
   const [isLoading, setIsLoading] = useState(true);
-
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:1001/api/utils/getResourceIndex');
+      const response = await axios.get(`${BACKEND_BASE_URL}/api/utils/getResourceIndex`);
       setResourceData(response.data?.data);
       setIsLoading(false);
     } catch (error) {
